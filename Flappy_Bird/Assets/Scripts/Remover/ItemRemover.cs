@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RemoverItems : MonoBehaviour
+public class ItemRemover : MonoBehaviour
 {
     [SerializeField] private BulletSpawner _spawnerOfBullets;
 

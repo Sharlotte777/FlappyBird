@@ -61,16 +61,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Screen\EndScreen.cs" />
+    <Compile Include="Assets\Scripts\InputReader.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Bird\Bird.cs" />
     <Compile Include="Assets\Scripts\Bird\BirdMover.cs" />
     <Compile Include="Assets\Scripts\Bullet\Bullet.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyCollisionHandler.cs" />
+    <Compile Include="Assets\Scripts\Remover\EnemyRemover.cs" />
     <Compile Include="Assets\Scripts\ObjectPool.cs" />
-    <Compile Include="Assets\Scripts\Remover\RemoverEnemy.cs" />
     <Compile Include="Assets\Scripts\Bird\BirdAttack.cs" />
     <Compile Include="Assets\Scripts\Game.cs" />
-    <Compile Include="Assets\Scripts\Remover\RemoverItems.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Window.cs" />
     <Compile Include="Assets\Scripts\Bird\BirdCollisionHandler.cs" />
@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyShoot.cs" />
     <Compile Include="Assets\Scripts\Bullet\BulletSpawner.cs" />
     <Compile Include="Assets\Scripts\Screen\StartScreen.cs" />
+    <Compile Include="Assets\Scripts\Remover\ItemRemover.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

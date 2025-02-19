@@ -2,9 +2,10 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BirdAttack))]
+[RequireComponent(typeof(InputReader))]
 public class BirdMover : MonoBehaviour
 {
-    private const KeyCode JumpKey = KeyCode.Space;
+    //private const KeyCode JumpKey = KeyCode.Space;
 
     [SerializeField] private float _tapForce;
     [SerializeField] private float _speed;
@@ -16,10 +17,12 @@ public class BirdMover : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private Quaternion _maxRotation;
     private Quaternion _minRotation;
+    private InputReader _reader;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        _reader = GetComponent<InputReader>();
     }
 
     private void Start()
@@ -32,13 +35,23 @@ public class BirdMover : MonoBehaviour
         Reset();
     }
 
+    private void OnEnable()
+    {
+        _reader.AbilityOfJumpChanged += DoJump;
+    }
+
+    private void OnDisable()
+    {
+        _reader.AbilityOfJumpChanged -= DoJump;
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(JumpKey))
-        {
-            _rigidbody.velocity = new Vector2(_speed, _tapForce);
-            transform.rotation = _maxRotation;
-        }
+        //if (Input.GetKeyDown(JumpKey))
+        //{
+        //    _rigidbody.velocity = new Vector2(_speed, _tapForce);
+        //    transform.rotation = _maxRotation;
+        //}
 
         transform.rotation = Quaternion.Lerp(transform.rotation, _minRotation, _rotationSpeed * Time.deltaTime);
     }
@@ -48,5 +61,11 @@ public class BirdMover : MonoBehaviour
         transform.position = _startPosition;
         transform.rotation = Quaternion.identity;
         _rigidbody.velocity = Vector2.zero;
+    }
+
+    private void DoJump()
+    {
+        _rigidbody.velocity = new Vector2(_speed, _tapForce);
+        transform.rotation = _maxRotation;
     }
 }

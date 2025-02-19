@@ -44,6 +44,7 @@ public class EnemySpawner : MonoBehaviour
         while (enabled)
         {
             Spawn();
+
             yield return wait;
         }
     }

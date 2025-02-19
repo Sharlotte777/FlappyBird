@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RemoverEnemy : MonoBehaviour
+public class EnemyRemover : MonoBehaviour
 {
     [SerializeField] private EnemySpawner _spawnerOfEnemies;
 
