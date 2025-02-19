@@ -4,6 +4,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private Enemy _prefab;
+    [SerializeField] private ScoreCounter _scoreCounter;
     [SerializeField] private BulletSpawner _bulletSpawner;
     [SerializeField] private float _delay;
     [SerializeField] private float _lowerBound;
@@ -34,12 +35,13 @@ public class EnemySpawner : MonoBehaviour
 
     private void HandleEnemyDeath(Enemy enemy)
     {
+        _scoreCounter.Add();
         RemoveObject(enemy);
     }
 
     private IEnumerator GenerateEnemy()
     {
-        var wait = new WaitForSeconds(_delay);
+        WaitForSeconds wait = new WaitForSeconds(_delay);
 
         while (enabled)
         {
@@ -54,7 +56,7 @@ public class EnemySpawner : MonoBehaviour
         float spawnPositionY = Random.Range(_upperBound, _lowerBound);
         Vector3 spawnPoint = new Vector3(transform.position.x, spawnPositionY, transform.position.z);
 
-        var enemy = _pool.GetObject();
+        Enemy enemy = _pool.GetObject();
         enemy.gameObject.SetActive(true);
         enemy.transform.position = spawnPoint;
         enemy.StartShoot(_bulletSpawner);

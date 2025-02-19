@@ -1,8 +1,8 @@
-using UnityEngine.Events;
+using System;
 
 public class EndScreen : Window
 {
-    public event UnityAction PlayButtonClicked;
+    public event Action PlayButtonClicked;
 
     public override void Close()
     {

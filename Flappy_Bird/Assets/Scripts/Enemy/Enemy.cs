@@ -1,18 +1,18 @@
 using System;
 using UnityEngine;
 
-[RequireComponent(typeof(EnemyShoot))]
+[RequireComponent(typeof(EnemyShooter))]
 [RequireComponent(typeof(EnemyCollisionHandler))]
 public class Enemy : MonoBehaviour
 {
-    private EnemyShoot _shoot;
+    private EnemyShooter _shoot;
     private EnemyCollisionHandler _collisionHandler;
 
     public event Action<Enemy> OnDeath;
 
     private void Awake()
     {
-        _shoot = GetComponent<EnemyShoot>();
+        _shoot = GetComponent<EnemyShooter>();
         _collisionHandler = GetComponent<EnemyCollisionHandler>();
     }
 

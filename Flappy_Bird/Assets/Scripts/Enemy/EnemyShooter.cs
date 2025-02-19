@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class EnemyShoot : MonoBehaviour
+public class EnemyShooter : MonoBehaviour
 {
     [SerializeField] private float _spawnDelay;
 
@@ -12,7 +12,7 @@ public class EnemyShoot : MonoBehaviour
 
     private IEnumerator GenerateBullets(BulletSpawner _bulletSpawner)
     {
-        var wait = new WaitForSeconds(_spawnDelay);
+        WaitForSeconds wait = new WaitForSeconds(_spawnDelay);
 
         while (enabled)
         {

@@ -10,12 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5864195160147647363}
   - component: {fileID: 2156135994645322985}
-  - component: {fileID: 169422212638133929}
   - component: {fileID: 8075009983539977022}
   - component: {fileID: -7402349878867323154}
   - component: {fileID: 8832659074909239449}
-  - component: {fileID: 2652918815925745229}
   - component: {fileID: 3641288747767314200}
+  - component: {fileID: 4643857756214317620}
   m_Layer: 0
   m_Name: EnemyBird
   m_TagString: Untagged
@@ -90,18 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &169422212638133929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7552701401777991105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36bc4316a736e0142a58bd126265913a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8075009983539977022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,19 +163,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2652918815925745229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7552701401777991105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80d2eb57b002c2247868b99c8c690e36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spawnDelay: 3
 --- !u!114 &3641288747767314200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,3 +175,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f04f3af6c1474b14dbd9f3fd5877f435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4643857756214317620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7552701401777991105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ca8399ab23a15409861db681a21c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnDelay: 2

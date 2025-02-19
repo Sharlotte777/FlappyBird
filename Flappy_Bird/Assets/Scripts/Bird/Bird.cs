@@ -3,12 +3,14 @@ using UnityEngine;
 
 [RequireComponent(typeof(BirdMover))]
 [RequireComponent(typeof(BirdCollisionHandler))]
-[RequireComponent(typeof(BirdAttack))]
+[RequireComponent(typeof(BirdAttacker))]
+[RequireComponent(typeof(ScoreCounter))]
 public class Bird : MonoBehaviour
 {
     private BirdMover _birdMover;
     private BirdCollisionHandler _handler;
-    private BirdAttack _attack;
+    private BirdAttacker _attack;
+    private ScoreCounter _scoreCounter;
 
     public event Action GameOver;
 
@@ -16,7 +18,8 @@ public class Bird : MonoBehaviour
     {
         _birdMover = GetComponent<BirdMover>();
         _handler = GetComponent<BirdCollisionHandler>();
-        _attack = GetComponent<BirdAttack>();
+        _attack = GetComponent<BirdAttacker>();
+        _scoreCounter = GetComponent<ScoreCounter>();
     }
 
     private void OnEnable()
@@ -37,6 +40,7 @@ public class Bird : MonoBehaviour
     public void Reset()
     {
         _birdMover.Reset();
+        _scoreCounter.Reset();
     }
 
     private void ProcessCollision()

@@ -1,12 +1,10 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(BirdAttack))]
+[RequireComponent(typeof(BirdAttacker))]
 [RequireComponent(typeof(InputReader))]
 public class BirdMover : MonoBehaviour
 {
-    //private const KeyCode JumpKey = KeyCode.Space;
-
     [SerializeField] private float _tapForce;
     [SerializeField] private float _speed;
     [SerializeField] private float _rotationSpeed;
@@ -47,12 +45,6 @@ public class BirdMover : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetKeyDown(JumpKey))
-        //{
-        //    _rigidbody.velocity = new Vector2(_speed, _tapForce);
-        //    transform.rotation = _maxRotation;
-        //}
-
         transform.rotation = Quaternion.Lerp(transform.rotation, _minRotation, _rotationSpeed * Time.deltaTime);
     }
 

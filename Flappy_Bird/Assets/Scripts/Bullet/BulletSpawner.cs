@@ -25,7 +25,7 @@ public class BulletSpawner : MonoBehaviour
 
     public void SpawnObject(Vector3 position)
     {
-        var bullet = _pool.GetObject();
+        Bullet bullet = _pool.GetObject();
 
         bullet.gameObject.SetActive(true);
         bullet.transform.position = position + _spawnOffset;
